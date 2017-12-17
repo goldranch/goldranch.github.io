@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Automation</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper" id="loginForm">
+        <form class="form-signin">       
+            <h2 class="form-signin-heading">Login</h2>
+            <input id="usernameTxt" type="text" class="form-control mb-2" name="username" placeholder="Email Address" required="" autofocus="" />
+            <input id="passwordTxt" type="password" class="form-control mb-2" name="password" placeholder="Password" required=""/>      
+            <button id="loginBtn" class="btn btn-lg btn-primary btn-block" type="submit"><i class="fa fa-sign-in"></i> Login</button>   
+        </form>
+    </div>
+    <div id="app">
+        <button class="btn btn-danger mt-1 ml-1" id="logoutBtn"><i class="fa fa-sign-out"></i> Log Out</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center center">
+                    <div id="main">
+                        <h1 class="mb-3">My Home</h1>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button id="lightsBtn" class="btn btn-warning float-left"><i class="fa fa-lightbulb-o"></i> Lights</button>
+                                <button id="tempBtn" class="btn btn-primary float-right"><i class="fa fa-thermometer-empty"></i> Temperature</button>                
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button id="camerasBtn" class="btn btn-info float-left"><i class="fa fa-video-camera"></i> Cameras</button>
+                                <button id="speakersBtn" class="btn btn-success float-right"><i class="fa fa-volume-up"></i> Speakers</button>        
+                            </div>
+                        </div>
+                    </div>
+                    <li id="lights" class="list-group">
+                        <h1 class="">Lights</h1>
+                        <button class="btn btn-danger" onclick="back()">Back</button>
+                        <hr>
+                        <div class="list-group-item">
+                            <h5>Backyard Light</h5>
+                            <div id="b_light_controls">
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="1" class="slider" id="b_light">
+                                </div>
+                                <div>
+                                    <input id="b_light_isAutomated" display="inline" type="checkbox">
+                                    <label display="inline" class="mt-5">Backyard Light Automation</label>
+                                </div>
+                                <div class="auto" id="auto">
+                                    Start Time: <input type="time" class="form-control" id="b_light_start_time">
+                                    End Time: <input type="time" class="form-control" id="b_light_end_time">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <div id="temp">
+                        <h1 class="">Temperature</h1>
+                        <button class="btn btn-danger float-right" onclick="back()">Back</button>                            
+                    </div>
+                    <div id="cameras">
+                        <h1 class="">Cameras</h1>
+                        <button class="btn btn-danger float-right" onclick="back()">Back</button>                        
+                    </div>
+                    <div id="speakers">
+                        <h1 class="">Speakers</h1>
+                        <button class="btn btn-danger float-right" onclick="back()">Back</button>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://use.fontawesome.com/e5f4944e79.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>    
+    <script src="main.js"></script>
+</body>
+</html>
