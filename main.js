@@ -124,7 +124,8 @@ document.getElementById('b_light').onchange = function(){
     var currentVal = parseInt(document.getElementById('b_light').value);
     currentVal = ((currentVal == 1) ? true : false);
     bLightRef.update({
-        value: currentVal
+        value: currentVal,
+        isAutomated: false
     });
 };
 // Change start time of automation
